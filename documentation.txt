@@ -1,0 +1,26 @@
+Compile the program:
+gcc fileutil.c -o fileutil
+Run program:
+./fileutil
+default file: "logfile.txt"
+
+This program allow user to Open, Copy and Move file.
+
+Open file: Two available options
+	./fileutil        	If user directly run the program then terminal will display the content of "logfile.txt"
+	./fileutil /../../a.txt	User can also run program to open specific file, with the path.
+
+Copy file( "-d" ): Three available options
+	./fileutil -d /../../	        User run program and input "-d" and path of destination directory, then program will copy the default file(logfile.txt.) to this directroy.
+	./fileutil /../a.txt -d /../../    User run program with source file and a path of destination directory. then the program will copy the souce file and paste to destination directroy.
+
+Move file("-M"): The "-M" flag allow user to move the file, when runing program, input "-M' before "-d" or after the destination directory. Sample Code below:
+	./fileutil -M -d /../../	                Program will move the deafult file to destination directory.
+	./fileutil /../a.txt  -d  /../../ -M    Program will move a.txt to destination directroy.
+
+Additional features: "-F", The "-F" flag allow user to force copying or moving. Sample code below:
+	./fileutil /../a.txt  -d  /../../ -M -F       Force the move of a.txt from source directory to destination directroy.
+	./fileutil /../a.txt -d  /../../ -F	     Force the copying of a.txt from source directory to destination directroy.
+
+			
+Note!!: Destination directory must appear immediately after user input flag "-d"
